@@ -27,13 +27,13 @@ module.exports = {
 			email: 'contact@portfolio-website.com',
 			phone: '+61 2 1234 5678',
 			messageType: 'message',
-			message: { md: 'Nice message notification.' },
+			body: { md: 'Nice message notification.' },
 		});
 
 		callback(null, {
 			admin: 'Admin User',
 			message: newMessage,
-			message_url: '/keystone/enquiries/',
+			message_url: '/keystone/messages/',
 		});
 	},
 

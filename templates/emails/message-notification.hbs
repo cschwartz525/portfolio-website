@@ -5,24 +5,24 @@
 	{{#if message.name.full}}
 		<strong>{{message.name.full}}</strong>
 	{{/if}}
-	
+
 	{{#if message.email}}
-		(<a href="mailto:{{message.email}}">{{message.email}}</a>)			
+		(<a href="mailto:{{message.email}}">{{message.email}}</a>)
 	{{/if}}
 	</p>
-	
+
 	{{#if message.phone}}
 		<p class="text-larger">Phone: {{message.phone}}</p>
 	{{/if}}
-	
+
 	{{#if message.messageType}}
-		<p class="text-larger">{{underscoreFormat message 'messageType'}}</p>
+		<p class="text-larger">{{message.messageType}}</p>
 	{{/if}}
-	
-	{{#if message.message}}
-		{{{message.message.html}}}
+
+	{{#if message.body}}
+		{{{message.body.html}}}
 	{{/if}}
-	
-	<p class="text-muted">Sent {{underscoreFormat message 'createdAt'}}</p>
-	<button url="/keystone/enquiries/{{message.id}}" label="Open Keystone" />
+
+	<p class="text-muted">Sent {{message.createdAt}}</p>
+	<button url="/keystone/messages/{{message.id}}" label="Open Keystone" />
 {{/if}}

@@ -44,7 +44,7 @@ Message.schema.methods.sendNotificationEmail = function (callback) {
 		if (err) return callback(err);
 		new keystone.Email({
 			templateExt: 'hbs',
-			templateEngine: require('express-handlebars'),
+			templateEngine: require('handlebars'),
 			templateName: 'message-notification',
 		}).send({
 			to: admins,
