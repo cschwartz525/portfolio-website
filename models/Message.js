@@ -2,62 +2,62 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 /**
- * Enquiry Model
+ * Message Model
  * =============
  */
 
-var Enquiry = new keystone.List('Enquiry', {
+var Message = new keystone.List('Message', {
 	nocreate: true,
 	noedit: true,
 });
 
-Enquiry.add({
+Message.add({
 	name: { type: Types.Name, required: true },
 	email: { type: Types.Email, required: true },
 	phone: { type: String },
-	enquiryType: { type: Types.Select, options: [
+	messageType: { type: Types.Select, options: [
 		{ value: 'message', label: 'Just leaving a message' },
 		{ value: 'question', label: 'I\'ve got a question' },
 		{ value: 'other', label: 'Something else...' },
 	] },
-	message: { type: Types.Markdown, required: true },
+	body: { type: Types.Markdown, required: true },
 	createdAt: { type: Date, default: Date.now },
 });
 
-Enquiry.schema.pre('save', function (next) {
+Message.schema.pre('save', function (next) {
 	this.wasNew = this.isNew;
 	next();
 });
 
-Enquiry.schema.post('save', function () {
+Message.schema.post('save', function () {
 	if (this.wasNew) {
 		this.sendNotificationEmail();
 	}
 });
 
-Enquiry.schema.methods.sendNotificationEmail = function (callback) {
+Message.schema.methods.sendNotificationEmail = function (callback) {
 	if (typeof callback !== 'function') {
 		callback = function () {};
 	}
-	var enquiry = this;
+	var message = this;
 	keystone.list('User').model.find().where('isAdmin', true).exec(function (err, admins) {
 		if (err) return callback(err);
 		new keystone.Email({
 			templateExt: 'hbs',
 			templateEngine: require('express-handlebars'),
-			templateName: 'enquiry-notification',
+			templateName: 'message-notification',
 		}).send({
 			to: admins,
 			from: {
 				name: 'Portfolio Website',
 				email: 'contact@portfolio-website.com',
 			},
-			subject: 'New Enquiry for Portfolio Website',
-			enquiry: enquiry,
+			subject: 'New Message for Portfolio Website',
+			message: message,
 		}, callback);
 	});
 };
 
-Enquiry.defaultSort = '-createdAt';
-Enquiry.defaultColumns = 'name, email, enquiryType, createdAt';
-Enquiry.register();
+Message.defaultSort = '-createdAt';
+Message.defaultColumns = 'name, email, messageType, createdAt';
+Message.register();

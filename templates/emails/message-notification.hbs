@@ -1,0 +1,28 @@
+<h1>Hi {{first_name}}</h1>
+<p class="text-larger">An message was just submitted to {{brand}}:</p>
+{{#if message.email}}
+	<p class="text-larger">From
+	{{#if message.name.full}}
+		<strong>{{message.name.full}}</strong>
+	{{/if}}
+	
+	{{#if message.email}}
+		(<a href="mailto:{{message.email}}">{{message.email}}</a>)			
+	{{/if}}
+	</p>
+	
+	{{#if message.phone}}
+		<p class="text-larger">Phone: {{message.phone}}</p>
+	{{/if}}
+	
+	{{#if message.messageType}}
+		<p class="text-larger">{{underscoreFormat message 'messageType'}}</p>
+	{{/if}}
+	
+	{{#if message.message}}
+		{{{message.message.html}}}
+	{{/if}}
+	
+	<p class="text-muted">Sent {{underscoreFormat message 'createdAt'}}</p>
+	<button url="/keystone/enquiries/{{message.id}}" label="Open Keystone" />
+{{/if}}

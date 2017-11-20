@@ -15,25 +15,25 @@ var keystone = require('keystone');
 
 module.exports = {
 
-	/** New Enquiry Notifications */
-	'enquiry-notification': function (req, res, callback) {
-		// To test enquiry notifications we create a dummy enquiry that
+	/** New Message Notifications */
+	'message-notification': function (req, res, callback) {
+		// To test message notifications we create a dummy message that
 		// is not saved to the database, but passed to the template.
 
-		var Enquiry = keystone.list('Enquiry');
+		var Message = keystone.list('Message');
 
-		var newEnquiry = new Enquiry.model({
+		var newMessage = new Message.model({
 			name: { first: 'Test', last: 'User' },
 			email: 'contact@portfolio-website.com',
 			phone: '+61 2 1234 5678',
-			enquiryType: 'message',
-			message: { md: 'Nice enquiry notification.' },
+			messageType: 'message',
+			message: { md: 'Nice message notification.' },
 		});
 
 		callback(null, {
 			admin: 'Admin User',
-			enquiry: newEnquiry,
-			enquiry_url: '/keystone/enquiries/',
+			message: newMessage,
+			message_url: '/keystone/enquiries/',
 		});
 	},
 
