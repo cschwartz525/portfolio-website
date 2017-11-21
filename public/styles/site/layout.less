@@ -3,6 +3,12 @@
 body {
 		background-color: @black;
 		color: @white;
+		font-family: 'Lato', Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+		font-weight: bold;
+		letter-spacing: -0.5px;
 }
 
 .no-select {
@@ -20,6 +26,8 @@ body {
 		border-radius: 20px;
 		color: @goldenrod;
 		display: block;
+		font-weight: bold;
+		letter-spacing: 0.5px;
 		margin: 0 auto;
 		padding: 10px 40px;
 		transition: 0.2s;
@@ -27,6 +35,7 @@ body {
 		&:hover {
 				background-color: @goldenrod;
 				color: @black;
+				cursor: pointer;
 				padding: 10px 50px;
 				transition: 0.2s;
 		}
