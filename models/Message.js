@@ -39,6 +39,14 @@ Message.schema.methods.sendNotificationEmail = function (callback) {
 		callback = function () {};
 	}
 	var message = this;
+	var subject;
+	if (this.messageType === 'inquiry') {
+		subject = 'New inquiry from craigschwartzweb.com';
+	} else if (this.messageType === 'message') {
+		subject = 'New message from craigschwartzweb.com';
+	} else {
+		subject = 'New message from craigschwartzweb.com';
+	}
 	keystone.list('User').model.find().where('isAdmin', true).exec(function (err, admins) {
 		if (err) return callback(err);
 		new keystone.Email({
@@ -49,9 +57,9 @@ Message.schema.methods.sendNotificationEmail = function (callback) {
 			to: admins,
 			from: {
 				name: 'Portfolio Website',
-				email: 'contact@portfolio-website.com',
+				email: 'contact@craigschwartzweb.com',
 			},
-			subject: 'New Message for Portfolio Website',
+			subject: subject,
 			message: message,
 		}, callback);
 	});

@@ -1,7 +1,7 @@
-<h1>Hi {{first_name}}</h1>
-<p class="text-larger">An message was just submitted to {{brand}}:</p>
+<h1>Hi Craig</h1>
+<p class="text-larger">A new {{message.messageType}} was just submitted to {{brand}}:</p>
 {{#if message.email}}
-	<p class="text-larger">From
+	<h3 class="text-larger">From
 	{{#if message.name.full}}
 		<strong>{{message.name.full}}</strong>
 	{{/if}}
@@ -9,14 +9,10 @@
 	{{#if message.email}}
 		(<a href="mailto:{{message.email}}">{{message.email}}</a>)
 	{{/if}}
-	</p>
+	</h3>
 
 	{{#if message.phone}}
-		<p class="text-larger">Phone: {{message.phone}}</p>
-	{{/if}}
-
-	{{#if message.messageType}}
-		<p class="text-larger">{{message.messageType}}</p>
+		<h4 class="text-larger">Phone: {{message.phone}}</h4>
 	{{/if}}
 
 	{{#if message.body}}
