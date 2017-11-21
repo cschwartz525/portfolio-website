@@ -1,44 +1,39 @@
 <div class="container">
-	<h1>Contact Us</h1>
+		<h1 class="text-center">Contact Me</h1>
 </div>
 <div class="container">
-	<div class="row">
-		<div class="col-sm-8 col-md-6">
-			{{#if messageSubmitted}}
-			<h3>Thanks for getting in touch.</h3>
-			{{else}}
-			<form method="post">
+		{{#if messageSubmitted}}
+		<h3>Thanks for getting in touch.</h3>
+		{{else}}
+		<form id="contact-form" method="post">
 				<input type="hidden" name="action" value="contact">
+				<div class="form-group {{#if validationErrors.messageType}}has-error{{/if}}">
+						<div class="text-center">If you're interested in working together, use the form below to tell me about your project, or just say hello!</div>
+						<div id="message-type-group">
+								{{#each messageTypes}}
+								<input id="{{value}}" class="message-type-radio" type="radio" name="messageType" value="{{value}}" />
+								<label for="{{value}}" class="message-type-label no-select">
+										{{label}}
+								</label>
+								{{/each}}
+						</div>
+				</div>
 				<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
-					<label>Name</label>
-					<input type="text" name="name.full"  class="form-control" value="{{formData.[name.full]}}">
+						<input type="text" name="name.full"  class="form-control" value="{{formData.[name.full]}}" placeholder="Name">
 				</div>
 				<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
-					<label>Email</label>
-					<input type="email" name="email" class="form-control" value="{{formData.email}}">
+						<input type="email" name="email" class="form-control" value="{{formData.email}}" placeholder="Email">
 				</div>
 				<div class="form-group">
-					<label>Phone</label>
-					<input type="text" name="phone" placeholder="(optional)" class="form-control" value="{{formData.phone}}">
-				</div>
-				<div class="form-group {{#if validationErrors.messageType}}has-error{{/if}}">
-					<label>What are you contacting us about?</label>
-					<select name="messageType" class="form-control">
-						<option value="">(select one)</option>
-						{{#each messageTypes}}
-						<option value="{{value}}">{{label}}</option>
-						{{/each}}
-					</select>
+						<input type="text" name="phone" placeholder="Phone Number (optional)" class="form-control" value="{{formData.phone}}">
 				</div>
 				<div class="form-group {{#if validationErrors.body}}has-error{{/if}} ">
-					<label>Message</label>
-					<textarea name="body" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.body}}</textarea>
+						<label>Message</label>
+						<textarea name="body" placeholder="Leave me a message..." rows="4" class="form-control">{{formData.body}}</textarea>
 				</div>
 				<div class="form-actions">
-					<button type="submit" class="btn btn-primary">Send</button>
+						<button type="submit" class="btn btn-primary">Send</button>
 				</div>
-			</form>
-			{{/if}}
-		</div>
-	</div>
+		</form>
+		{{/if}}
 </div>
