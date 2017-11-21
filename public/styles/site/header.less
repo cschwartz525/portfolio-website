@@ -1,3 +1,53 @@
+@import 'variables';
+
 #header {
-	margin-top: 30px;
+		margin-top: 30px;
+
+		.navbar.navbar-default {
+				background-color: transparent;
+				border: 0;
+
+				.navbar-brand {
+						color: @light-grey;
+						font-weight: bold;
+						margin-right: 20px;
+						padding: 5px;
+
+						&:hover {
+								color: @white;
+						}
+				}
+
+				.nav.navbar-nav.navbar-left {
+						li {
+								a {
+										color: @light-grey;
+										margin: 0 10px;
+										padding: 5px 0;
+										text-transform: uppercase;
+										transition: 0.2s;
+
+										&:hover {
+												border-bottom: 2px solid white;
+												color: @white;
+												transition: 0.2s;
+										}
+								}
+
+								&.active {
+										a {
+												background-color: transparent;
+												border-bottom: 1px solid @white;
+												color: @white;
+												transition: 0.2s;
+
+												&:hover {
+														border-bottom: 2px solid white;
+														transition: 0.2s;
+												}
+										}
+								}
+						}
+				}
+		}
 }

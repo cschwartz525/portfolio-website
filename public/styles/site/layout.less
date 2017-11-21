@@ -1,7 +1,11 @@
 @import 'variables';
 
 body {
-		background-color: @black;
+		background: @black;
+		background: -webkit-linear-gradient(@darker-grey, @black);
+		background: -o-linear-gradient(@darker-grey, @black);
+		background: -moz-linear-gradient(@darker-grey, @black);
+		background: linear-gradient(@darker-grey, @black);
 		color: @white;
 		font-family: 'Lato', Helvetica, sans-serif;
 }
