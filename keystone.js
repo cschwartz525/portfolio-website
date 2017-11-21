@@ -29,6 +29,7 @@ keystone.init({
 	}).engine,
 
 	'emails': 'templates/emails',
+	'mandrill api key': process.env.MANDRILL_API_KEY,
 
 	'auto update': true,
 	'session': true,
