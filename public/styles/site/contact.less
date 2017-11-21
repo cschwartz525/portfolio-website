@@ -1,0 +1,80 @@
+#contact-form {
+		margin: 0 auto;
+		position: relative;
+		width: 500px;
+}
+
+#message-type-group {
+		margin: 10px auto;
+		position: relative;
+		width: 484px;
+}
+
+.message-type-radio {
+		display: none;
+}
+
+.message-type-label {
+		background-color: rgba(0, 0, 0, 0);
+		border: 2px solid @goldenrod;
+		border-radius: 20px;
+		color: @goldenrod;
+		display: inline-block;
+		font-weight: bold;
+		letter-spacing: 0.5px;
+		margin: 0 10px;
+		padding: 10px 20px;
+		text-align: center;
+		transition: 0.2s;
+		width: 220px;
+
+		&:hover {
+				cursor: pointer;
+				margin: 0;
+				width: 240px;
+		}
+}
+
+.message-type-radio:checked + .message-type-label {
+		background-color: @goldenrod;
+		color: @black;
+}
+
+.form-control[type="email"],
+.form-control[type="text"] {
+		background-color: transparent;
+		border: none;
+		border-radius: 0;
+		box-shadow: 0 1px 0 @white;
+		color: @white;
+		font-size: 16px;
+		height: 50px;
+		letter-spacing: 1px;
+		outline: none;
+		padding: 10px 0;
+
+		&:hover {
+				box-shadow: 0 3px 0 @white;
+		}
+
+		&:focus {
+				box-shadow: 0 3px 0 @goldenrod;
+		}
+}
+
+textarea.form-control {
+		background-color: transparent;
+		border: 1px solid white;
+		border-radius: 0;
+		box-shadow: none;
+		color: @white;
+		font-size: 16px;
+		height: 200px;
+		letter-spacing: 1px;
+		outline: none;
+
+		&:focus {
+				border: 1px solid @goldenrod;
+				box-shadow: none;
+		}
+}

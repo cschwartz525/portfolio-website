@@ -1,16 +1,46 @@
-#header {
-	margin-top: 30px;
+@import 'variables';
+
+body {
+		background: @black;
+		background: -webkit-linear-gradient(@darker-grey, @black);
+		background: -o-linear-gradient(@darker-grey, @black);
+		background: -moz-linear-gradient(@darker-grey, @black);
+		background: linear-gradient(@darker-grey, @black);
+		color: @white;
+		font-family: 'Lato', Helvetica, sans-serif;
 }
 
-#footer {
-	margin-top: 30px;
-	border-top: 1px solid #eeeeee;
-	padding-top: 30px;
-	color: #777777;
+h1, h2, h3, h4, h5 {
+		font-weight: bold;
+		letter-spacing: -0.5px;
 }
 
-.gallery-image img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+.no-select {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+}
+
+.btn.btn-primary {
+		background-color: rgba(0, 0, 0, 0);
+		border: 2px solid @goldenrod;
+		border-radius: 20px;
+		color: @goldenrod;
+		display: block;
+		font-weight: bold;
+		letter-spacing: 0.5px;
+		margin: 0 auto;
+		padding: 10px 40px;
+		transition: 0.2s;
+
+		&:hover {
+				background-color: @goldenrod;
+				color: @black;
+				cursor: pointer;
+				padding: 10px 50px;
+				transition: 0.2s;
+		}
 }

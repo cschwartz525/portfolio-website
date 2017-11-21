@@ -16,9 +16,8 @@ Message.add({
 	email: { type: Types.Email, required: true },
 	phone: { type: String },
 	messageType: { type: Types.Select, options: [
-		{ value: 'message', label: 'Just leaving a message' },
-		{ value: 'question', label: 'I\'ve got a question' },
-		{ value: 'other', label: 'Something else...' },
+		{ value: 'inquiry', label: 'Let\'s work together!' },
+		{ value: 'message', label: 'Just saying hello' },
 	] },
 	body: { type: Types.Markdown, required: true },
 	createdAt: { type: Date, default: Date.now },
