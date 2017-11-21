@@ -1,16 +1,24 @@
-#header {
-	margin-top: 30px;
+@import 'variables';
+
+body {
+		background-color: @black;
+		color: @white;
 }
 
-#footer {
-	margin-top: 30px;
-	border-top: 1px solid #eeeeee;
-	padding-top: 30px;
-	color: #777777;
-}
+.btn.btn-primary {
+		background-color: rgba(0, 0, 0, 0);
+		border: 2px solid @goldenrod;
+		border-radius: 20px;
+		color: @goldenrod;
+		display: block;
+		margin: 0 auto;
+		padding: 10px 40px;
+		transition: 0.2s;
 
-.gallery-image img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+		&:hover {
+				background-color: @goldenrod;
+				color: @black;
+				padding: 10px 50px;
+				transition: 0.2s;
+		}
 }
