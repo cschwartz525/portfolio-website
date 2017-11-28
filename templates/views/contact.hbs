@@ -1,10 +1,8 @@
 <div class="container">
-		<h1 class="text-center">Contact Me</h1>
-</div>
-<div class="container">
 		{{#if messageSubmitted}}
-		<h3>Thanks for getting in touch.</h3>
-		{{else}}
+		<h3 class="success-message">Thanks for getting in touch.</h3>
+		{{/if}}
+		<h1 class="text-center">Contact Me</h1>
 		<form id="contact-form" method="post">
 				<input type="hidden" name="action" value="contact">
 				<div class="form-group {{#if validationErrors.messageType}}has-error{{/if}}">
@@ -35,5 +33,4 @@
 						<button type="submit" class="btn btn-primary">Send</button>
 				</div>
 		</form>
-		{{/if}}
 </div>
