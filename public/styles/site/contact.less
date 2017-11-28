@@ -64,7 +64,7 @@
 
 textarea.form-control {
 		background-color: transparent;
-		border: 1px solid white;
+		border: 1px solid @white;
 		border-radius: 0;
 		box-shadow: none;
 		color: @white;
@@ -76,5 +76,66 @@ textarea.form-control {
 		&:focus {
 				border: 1px solid @goldenrod;
 				box-shadow: none;
+		}
+}
+
+#social-links {
+		display: table;
+		margin: 10px auto;
+
+		h2, h3 {
+				text-align: center;
+		}
+
+		ul {
+				display: table;
+				list-style: none;
+				margin: 0 auto;
+				padding: 0;
+
+				li {
+						display: inline-block;
+						margin: 0 10px;
+
+						a svg {
+								border-radius: 10px;
+								height: 60px;
+								width: 60px;
+								transition: 0.2s;
+						}
+
+						#facebook {
+								background-color: @facebook;
+								fill: @white;
+
+								&:hover {
+										background-color: @white;
+										fill: @facebook;
+										transition: 0.2s;
+								}
+						}
+
+						#github {
+								background-color: @github;
+								fill: @white;
+
+								&:hover {
+										background-color: @white;
+										fill: @github;
+										transition: 0.2s;
+								}
+						}
+
+						#linkedin {
+								background-color: @linkedin;
+								fill: @white;
+
+								&:hover {
+										background-color: @white;
+										fill: @linkedin;
+										transition: 0.2s;
+								}
+						}
+				}
 		}
 }
