@@ -7,22 +7,34 @@
 				background-color: transparent;
 				border: 0;
 
-				.navbar-brand {
-						color: @light-grey;
-						font-weight: bold;
-						margin-right: 20px;
-						padding: 5px;
+				.collapse.navbar-collapse {
+						text-align: center;
+				}
 
-						&:hover {
-								color: @white;
+				.navbar-header {
+						position: fixed;
+
+						.navbar-brand {
+								color: @light-grey;
+								font-weight: bold;
+								margin-right: 20px;
+								padding: 5px;
+
+								&:hover {
+										color: @white;
+								}
 						}
 				}
 
-				.nav.navbar-nav.navbar-left {
+				.nav.navbar-nav {
+						display: inline-block;
+						float: none;
+						vertical-align: top;
+
 						li {
 								a {
 										color: @light-grey;
-										margin: 0 10px;
+										margin: 0 15px;
 										padding: 5px 0;
 										text-transform: uppercase;
 										transition: 0.2s;
