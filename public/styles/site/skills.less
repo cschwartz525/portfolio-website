@@ -1,0 +1,32 @@
+#skills-container {
+		display: table;
+		margin: 0 auto;
+		width: 80%;
+}
+
+.skill-category {
+		display: table-cell;
+		margin: 0;
+		text-align: center;
+		width: 25%;
+
+		&__header {
+				font-weight: normal;
+				letter-spacing: -1px;
+				text-transform: uppercase;
+		}
+		&__list {
+				list-style-type: none;
+				padding: 0;
+		}
+		&__item {
+				border: 2px solid @goldenrod;
+				border-radius: 20px;
+				cursor: pointer;
+				height: 40px;
+				line-height: 1;
+				margin: 10px auto;
+				padding: 10px 20px;
+				width: 150px;
+		}
+}

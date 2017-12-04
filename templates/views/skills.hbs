@@ -1,5 +1,16 @@
 {{!< default}}
 <div class="container">
-	<div class="jumbotron">
-	</div>
+		<h1 class="text-center">My Skills</h1>
+		<div id="skills-container">
+				{{#each data.categories}}
+				<div class="skill-category">
+						<h3 class="skill-category__header">{{name}}</h3>
+						<ul class="skill-category__list">
+								{{#each skills }}
+								<li class="skill-category__item" title="{{experience}} years">{{name}}</li>
+								{{/each}}
+						</ul>
+				</div>
+				{{/each}}
+		</div>
 </div>
