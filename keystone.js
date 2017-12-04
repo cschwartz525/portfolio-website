@@ -5,6 +5,7 @@ require('dotenv').config();
 // Require keystone
 var keystone = require('keystone');
 var handlebars = require('express-handlebars');
+var handlebarsHelpers = require('./templates/views/helpers');
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -24,7 +25,7 @@ keystone.init({
 		layoutsDir: 'templates/views/layouts',
 		partialsDir: 'templates/views/partials',
 		defaultLayout: 'default',
-		helpers: new require('./templates/views/helpers')(),
+		helpers: new handlebarsHelpers(),
 		extname: '.hbs',
 	}).engine,
 
@@ -72,12 +73,6 @@ keystone.set('email locals', {
 
 // Load your project's email test routes
 keystone.set('email tests', require('./routes/emails'));
-
-
-// Switch Keystone Email defaults to handlebars
-keystone.Email.defaults.templateExt = 'hbs';
-keystone.Email.defaults.templateEngine = require('handlebars');
-
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {

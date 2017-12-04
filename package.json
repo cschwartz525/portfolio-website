@@ -8,9 +8,12 @@
     "dotenv": "^2.0.0",
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.5",
-    "keystone": "^0.3.22",
+    "hbs": "^4.0.1",
+    "keystone": "4.0.0-beta.7",
+    "keystone-email": "^1.0.5",
     "lodash": "^4.13.1",
-    "moment": "^2.10.6"
+    "moment": "^2.10.6",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "eslint": "^2.12.0",
