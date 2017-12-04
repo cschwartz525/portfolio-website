@@ -51,7 +51,7 @@ Message.schema.methods.sendNotificationEmail = function (callback) {
 		if (err) return callback(err);
 		new keystone.Email({
 			templateExt: 'hbs',
-			templateEngine: require('handlebars'),
+			templateEngine: require('express-handlebars'),
 			templateName: 'message-notification',
 		}).send({
 			to: admins,
@@ -61,6 +61,7 @@ Message.schema.methods.sendNotificationEmail = function (callback) {
 			},
 			subject: subject,
 			message: message,
+			layout: false,
 		}, callback);
 	});
 };
