@@ -64,5 +64,21 @@ a {
 		margin: 0 auto;
 		padding: 10px 40px;
 		text-align: center;
+}
 
+.pagination {
+		display: table;
+		margin: 20px auto;
+
+		li {
+				a {
+						background-color: transparent !important;
+						border: 0 !important;
+						color: @white;
+
+						&:active, &:focus, &:hover {
+								color: @goldenrod;
+						}
+				}
+		}
 }
