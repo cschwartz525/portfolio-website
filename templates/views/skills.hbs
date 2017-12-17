@@ -1,5 +1,49 @@
 {{!< default}}
 <div class="container">
-	<div class="jumbotron">
-	</div>
+		<h1 class="text-center">My Skills</h1>
+		<div class="skills-summary">
+				<div class="skills-summary__item">
+						<h3 class="skills-summary__item__name">Web Applications</h3>
+						<div class="skills-summary__item__icon" id="icon-web-apps">
+								<i class="fa fa-television"></i>
+								<i class="fa fa-code"></i>
+						</div>
+						<p class="skills-summary__item__desc">
+								I specialize in building front-end web applications with Node.js, jQuery, HTML5, CSS3, and many more.
+						</p>
+				</div>
+				<div class="skills-summary__item">
+						<h3 class="skills-summary__item__name">API Development</h3>
+						<div class="skills-summary__item__icon" id="icon-apis">
+								<i class="fa fa-cloud"></i>
+								<i class="fa fa-server"></i>
+						</div>
+						<p class="skills-summary__item__desc">
+								I also have extensive experience building RESTful APIs and web services in a variety of languages.
+						</p>
+				</div>
+				<div class="skills-summary__item">
+						<h3 class="skills-summary__item__name">User Experience</h3>
+						<div class="skills-summary__item__icon" id="icon-uiux">
+								<i class="fa fa-users"></i>
+						</div>
+						<p class="skills-summary__item__desc">
+								I design attractive, responsive, easy-to-use websites and user interfaces with the end user in mind.
+						</p>
+				</div>
+		</div>
+		<div id="skills-container">
+				{{#each data.categories}}
+				<div class="skill-category">
+						<h3 class="skill-category__header">
+								<div class="wrapper">{{name}}</div>
+						</h3>
+						<ul class="skill-category__list">
+								{{#each skills }}
+								<li class="skill-category__item" title="{{experience}} years">{{name}}</li>
+								{{/each}}
+						</ul>
+				</div>
+				{{/each}}
+		</div>
 </div>

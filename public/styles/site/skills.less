@@ -1,0 +1,110 @@
+.skills-summary {
+		display: table;
+		margin: 20px auto;
+
+		&__item {
+				@media screen and (min-width: 992px) {
+						display: inline-block;
+						margin: 0 20px;
+						width: 250px;
+				}
+				@media screen and (max-width: 991px) and (min-width: 446px) {
+						display: block;
+						margin: 20px 0;
+						width: 360px;
+				}
+				@media screen and (max-width: 445px) {
+						display: block;
+						margin: 20px 0;
+						width: 100%;
+				}
+
+				&__name {
+						font-weight: normal;
+						margin: 0 auto;
+						text-align: center;
+						text-transform: uppercase;
+				}
+
+				&__icon {
+						height: 108px;
+						margin: 10px auto 0 auto;
+						width: 108px;
+				}
+
+				&__desc {
+						font-size: 15px;
+						text-align: center;
+				}
+		}
+}
+
+#icon-web-apps {
+		.fa.fa-television {
+				font-size: 100px;
+				position: absolute;
+		}
+		.fa.fa-code {
+				font-size: 55px;
+		    position: absolute;
+		    margin: 15px 25px;
+		}
+}
+
+#icon-apis {
+		.fa.fa-cloud {
+				font-size: 100px;
+				position: absolute;
+		}
+		.fa.fa-server {
+				color: black;
+				font-size: 40px;
+				position: absolute;
+				margin: 36px 32px;
+		}
+}
+
+#icon-uiux {
+		.fa.fa-users {
+				font-size: 80px;
+		    position: absolute;
+		    margin: 11px;
+		}
+}
+
+#skills-container {
+		display: table;
+		margin: 0 auto;
+		width: 80%;
+}
+
+.skill-category {
+		@media screen and (min-width: 992px) {
+				display: table-cell;
+				margin: 0;
+				text-align: center;
+				width: 25%;
+		}
+		@media screen and (max-width: 991px) {
+				display: block;
+				margin: 0;
+				text-align: center;
+				width: 100%;
+		}
+
+		&__header {
+				font-weight: normal;
+				letter-spacing: -1px;
+				text-transform: uppercase;
+
+				.wrapper {
+						border-bottom: 1px solid @goldenrod;
+						display: inline;
+						padding: 5px 0;
+				}
+		}
+		&__list {
+				list-style-type: none;
+				padding: 0;
+		}
+}
