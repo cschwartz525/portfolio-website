@@ -8,6 +8,9 @@
 								<i class="fa fa-television"></i>
 								<i class="fa fa-code"></i>
 						</div>
+						<p class="skills-summary__item__desc">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
 				</div>
 				<div class="skills-summary__item">
 						<h3 class="skills-summary__item__name">API Development</h3>
@@ -15,18 +18,26 @@
 								<i class="fa fa-cloud"></i>
 								<i class="fa fa-server"></i>
 						</div>
+						<p class="skills-summary__item__desc">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
 				</div>
 				<div class="skills-summary__item">
 						<h3 class="skills-summary__item__name">User Experience</h3>
 						<div class="skills-summary__item__icon" id="icon-uiux">
 								<i class="fa fa-users"></i>
 						</div>
+						<p class="skills-summary__item__desc">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</p>
 				</div>
 		</div>
 		<div id="skills-container">
 				{{#each data.categories}}
 				<div class="skill-category">
-						<h3 class="skill-category__header">{{name}}</h3>
+						<h3 class="skill-category__header">
+								<div class="wrapper">{{name}}</div>
+						</h3>
 						<ul class="skill-category__list">
 								{{#each skills }}
 								<li class="skill-category__item" title="{{experience}} years">{{name}}</li>
