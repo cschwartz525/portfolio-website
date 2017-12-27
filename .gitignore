@@ -31,4 +31,4 @@ node_modules
 .DS_Store
 
 # Stylesheet
-public/styles/site.min.less
+public/styles/site.min.css
