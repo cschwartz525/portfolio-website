@@ -2,24 +2,27 @@
 <div class="container">
 		<h1 class="text-center">My Experience</h1>
 
-		<h3>Jobs</h3>
-		{{#each data.jobs}}
-		<div class="job">
-				<h3 class="company">{{company}}</h3>
-				<h4 class="title">{{title}}</h4>
-				<p class="dates">{{displayStartDate}} - {{displayEndDate}}</p>
-				<div class="summary">{{{summary}}}</div>
+		<div id="jobs-container">
+				<h3 class="experience-subheader">Jobs</h3>
+				{{#each data.jobs}}
+				<div class="job">
+						<h3 class="company">{{company}}</h3>
+						<h4 class="title">{{title}}</h4>
+						<p class="dates">{{displayStartDate}} - {{displayEndDate}}</p>
+						<div class="summary">{{{summary}}}</div>
+				</div>
+				{{/each}}
 		</div>
-		{{/each}}
 
-		<h3>Education</h3>
-		{{#each data.education}}
-		<div class="education">
-				<h3 class="school">{{school}}</h3>
-				<h4 class="degree">{{degree}}</h4>
-				<h4 class="major">{{major}}</h4>
-				<p class="dates">{{dates}}</p>
-				<div class="summary">{{{summary}}}</div>
+		<div id="education-container">
+				<h3 class="experience-subheader">Education</h3>
+				{{#each data.education}}
+				<div class="education">
+						<h3 class="school">{{school}}</h3>
+						<h4 class="degree">{{degree}} - {{major}}</h4>
+						<p class="dates">{{displayStartDate}} - {{displayEndDate}}</p>
+						<div class="summary">{{{summary}}}</div>
+				</div>
+				{{/each}}
 		</div>
-		{{/each}}
 </div>
