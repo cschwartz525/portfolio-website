@@ -3,14 +3,31 @@
 
 		&__links {
 				margin: 30px auto;
-				width: 367px;
+				@media screen and (min-width: 412px) {
+						width: 367px;
+				}
+				@media screen and (max-width: 411px) {
+						width: 100%;
+				}
 
 				.btn.btn-primary {
-						display: inline-block;
-						margin: 0 10px;
+						@media screen and (min-width: 412px) {
+								display: inline-block;
+								margin: 0 10px;
+						}
+						@media screen and (max-width: 411px) {
+								display: block;
+								margin: 10px auto;
+								width: 50%;
+						}
 
 						&:hover {
-								margin: 0;
+								@media screen and (min-width: 412px) {
+										margin: 0;
+								}
+								@media screen and (max-width: 411px) {
+										width: 60%;
+								}
 						}
 				}
 		}
