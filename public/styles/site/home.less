@@ -1,5 +1,10 @@
 .home-container {
-		margin: 120px auto;
+		@media screen and (min-width: 506px) {
+				margin: 120px auto;
+		}
+		@media screen and (max-width: 505px) {
+				margin: 0 auto;
+		}
 
 		&__links {
 				margin: 30px auto;
