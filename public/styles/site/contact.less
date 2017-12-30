@@ -70,21 +70,25 @@
 .form-control[type="text"] {
 		background-color: transparent;
 		border: none;
+		border-bottom: 1px solid @white;
 		border-radius: 0;
-		box-shadow: 0 1px 0 @white;
+		box-shadow: none;
 		color: @white;
 		font-size: 16px;
 		height: 50px;
 		letter-spacing: 1px;
 		outline: none;
 		padding: 10px 0;
+		transition: 0.2s;
 
 		&:hover {
-				box-shadow: 0 3px 0 @white;
+				border-bottom: 3px solid @white;
+				transition: 0.2s;
 		}
 
 		&:focus {
-				box-shadow: 0 3px 0 @goldenrod;
+				border-bottom: 3px solid @goldenrod;
+				transition: 0.2s;
 		}
 }
 
