@@ -32,3 +32,6 @@ node_modules
 
 # Stylesheet
 public/styles/site.min.css
+
+# Node
+package-lock.json
