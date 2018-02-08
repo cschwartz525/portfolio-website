@@ -4,9 +4,10 @@
 				<div class="blog">
 						{{# each data.posts.results}}
 						<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
-								<h2 class="title"><a href="{{postUrl slug}}">{{{title}}}</a></h2>
-								<p class="lead text-muted">{{{categoryList categories prefix="Posted in "}}}</p>
-								<div class="brief"><a href="{{postUrl slug}}">{{{content.brief}}}</a></div>
+								<a href="{{postUrl slug}}">
+										<h2 class="title">{{{title}}}</h2>
+										<div class="brief">{{{content.brief}}}</div>
+								</a>
 						</div>
 						{{/each}}
 				</div>
