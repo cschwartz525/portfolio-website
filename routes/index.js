@@ -20,9 +20,11 @@
 
 var keystone = require('keystone');
 var middleware = require('./middleware');
+var sslRedirect = require('heroku-ssl-redirect');
 var importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
+keystone.pre('routes', sslRedirect());
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('render', middleware.flashMessages);
 

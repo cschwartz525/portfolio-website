@@ -10,6 +10,7 @@
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.5",
     "hbs": "^4.0.1",
+    "heroku-ssl-redirect": "0.0.4",
     "keystone": "4.0.0-beta.7",
     "keystone-email": "^1.0.5",
     "lodash": "^4.13.1",
