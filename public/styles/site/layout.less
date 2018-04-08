@@ -1,11 +1,11 @@
 @import 'variables';
 
 body {
-		background: @black;
-		background: -webkit-linear-gradient(@darker-grey, @black);
-		background: -o-linear-gradient(@darker-grey, @black);
-		background: -moz-linear-gradient(@darker-grey, @black);
-		background: linear-gradient(@darker-grey, @black);
+		background: @bg-blue;
+		background: -webkit-linear-gradient(@bg-blue, @bg-purple);
+		background: -o-linear-gradient(@bg-blue, @bg-purple);
+		background: -moz-linear-gradient(@bg-blue, @bg-purple);
+		background: linear-gradient(@bg-blue, @bg-purple);
 		background-attachment: fixed;
 		background-repeat: no-repeat;
 		color: @white;
@@ -22,7 +22,7 @@ a {
 		color: @white;
 
 		&:active, &:focus, &:hover {
-				color: @goldenrod;
+				color: @light-green;
 		}
 }
 
@@ -37,9 +37,9 @@ a {
 
 .btn.btn-primary {
 		background-color: rgba(0, 0, 0, 0);
-		border: 2px solid @goldenrod;
+		border: 2px solid @light-green;
 		border-radius: 20px;
-		color: @goldenrod;
+		color: @light-green;
 		display: block;
 		font-weight: bold;
 		letter-spacing: 0.5px;
@@ -48,7 +48,7 @@ a {
 		transition: 0.2s;
 
 		&:hover {
-				background-color: @goldenrod;
+				background-color: @light-green;
 				color: @black;
 				cursor: pointer;
 				padding: 10px 50px;
@@ -77,7 +77,7 @@ a {
 						color: @white;
 
 						&:active, &:focus, &:hover {
-								color: @goldenrod;
+								color: @light-green;
 						}
 				}
 		}
