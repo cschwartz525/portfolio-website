@@ -9,12 +9,21 @@
 		}
 
 		.job {
-				background-color: @goldenrod;
-				border-radius: 0;
-				box-shadow: 0 3px 0 @dark-goldenrod;
 				color: @black;
 				margin: 10px auto;
-				padding: 10px;
+
+				.top {
+						background: linear-gradient(to right, @dark-goldenrod, @goldenrod);
+						border-radius: 10px 10px 0 0;
+						padding: 10px;
+				}
+
+				.bottom {
+						background: linear-gradient(to right, @lighter-grey, @white);
+						border-radius: 0 0 10px 10px;
+						box-shadow: 0 3px 0 @light-grey;
+						padding: 10px;
+				}
 
 				.company {
 						font-size: 24px;
@@ -52,12 +61,21 @@
 		}
 
 		.education {
-				background-color: @goldenrod;
-				border-radius: 0;
-				box-shadow: 0 3px 0 @dark-goldenrod;
 				color: @black;
 				margin: 10px auto;
-				padding: 10px;
+
+				.top {
+						background: linear-gradient(to right, @dark-goldenrod, @goldenrod);
+						border-radius: 10px 10px 0 0;
+						padding: 10px;
+				}
+
+				.bottom {
+						background: linear-gradient(to right, @lighter-grey, @white);
+						border-radius: 0 0 10px 10px;
+						box-shadow: 0 3px 0 @light-grey;
+						padding: 10px;
+				}
 
 				.school {
 						font-size: 24px;
