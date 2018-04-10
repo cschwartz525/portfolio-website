@@ -98,9 +98,19 @@
 				text-transform: uppercase;
 
 				.wrapper {
-						border-bottom: 1px solid @goldenrod;
 						display: inline;
 						padding: 5px 0;
+						position: relative;
+
+						&:after {
+								background: linear-gradient(to right, @dark-goldenrod, @goldenrod);
+								bottom: 0;
+								content: "";
+								height: 1px;
+								left: 1px;
+								position: absolute;
+								right: -1px;
+						}
 				}
 		}
 		&__list {
