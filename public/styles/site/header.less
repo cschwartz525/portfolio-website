@@ -13,7 +13,31 @@
 				border: 0;
 
 				.navbar-collapse {
-						text-align: center;
+						&.collapse {
+								text-align: center;
+
+								.fa {
+										display: none;
+								}
+						}
+
+						&.collapse.in, &.collapsing {
+								background: @dark-grey;
+								border: none;
+								border-radius: 10px;
+								box-shadow: none;
+								float: right;
+								padding: 5px 15px;
+								position: absolute;
+								right: 10px;
+								text-align: right;
+								width: 150px;
+
+								.fa {
+										display: inline-block;
+										margin-right: 6px;
+								}
+						}
 				}
 
 				.navbar-header {
@@ -34,6 +58,7 @@
 				.navbar-toggle {
 						background-color: transparent;
 						border: 0;
+						margin-right: 0;
 
 						.icon-bar {
 								background-color: @light-grey;

@@ -47,7 +47,7 @@
 							<ul class="nav navbar-nav">
 									{{# each navLinks}}
 									<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
-										<a href="{{ href }}">{{ label }}</a>
+										<a href="{{ href }}"><i class="fa {{ icon }}"></i>{{ label }}</a>
 									</li>
 								{{/each}}
 							</ul>
@@ -88,7 +88,7 @@
 			<!-- The content block should contain the body of your template's content-->
 			{{{body}}}
 		</div>
-		<div class="container">
+		<div class="container bottom">
 			<div id="footer">
 				<p>Site by <a href="http://craigschwartzweb.com" target="_blank">Craig Schwartz</a></p>
 			</div>
