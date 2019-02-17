@@ -1,3 +1,4 @@
+var axios = require('axios');
 var keystone = require('keystone');
 var Message = keystone.list('Message');
 
@@ -12,25 +13,44 @@ exports = module.exports = function (req, res) {
 	locals.formData = req.body || {};
 	locals.validationErrors = {};
 	locals.messageSubmitted = false;
+	locals.recaptchaSiteKey = process.env.RECAPTCHA_SITEKEY;
 
 	// On POST requests, add the Message item to the database
 	view.on('post', { action: 'contact' }, function (next) {
 
-		var newMessage = new Message.model();
-		var updater = newMessage.getUpdateHandler(req);
+		const recaptchaResponse = req.body['g-recaptcha-response'];
+		const recaptchaSecret = process.env.RECAPTCHA_SECRET;
+		const recaptchaVerifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${encodeURIComponent(recaptchaSecret)}&response=${encodeURIComponent(recaptchaResponse)}`;
 
-		updater.process(req.body, {
-			flashErrors: true,
-			fields: 'name, email, phone, messageType, body',
-			errorMessage: 'There was a problem submitting your message:',
-		}, function (err) {
-			if (err) {
-				locals.validationErrors = err.errors;
+		axios(recaptchaVerifyUrl).then((response) => {
+
+			if (response.data && response.data.success) {
+
+				var newMessage = new Message.model();
+				var updater = newMessage.getUpdateHandler(req);
+
+				updater.process(req.body, {
+					flashErrors: true,
+					fields: 'name, email, phone, messageType, body',
+					errorMessage: 'There was a problem submitting your message:',
+				}, function (err) {
+					if (err) {
+						locals.validationErrors = err.errors;
+					} else {
+						locals.messageSubmitted = true;
+					}
+					next();
+				});
+
 			} else {
-				locals.messageSubmitted = true;
+
+				locals.messageSubmitted = false;
+				next();
+
 			}
-			next();
+
 		});
+
 	});
 
 	view.render('contact');
