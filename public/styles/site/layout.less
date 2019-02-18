@@ -8,9 +8,30 @@ body {
 		background: linear-gradient(@darker-grey, @black);
 		background-attachment: fixed;
 		background-repeat: no-repeat;
+		background-size: 400% 400%;
 		color: @white;
 		font-family: 'Lato', Helvetica, sans-serif;
 		height: 100%;
+
+		-webkit-animation: BackgroundAnimation 6s ease infinite;
+		-moz-animation: BackgroundAnimation 6s ease infinite;
+		animation: BackgroundAnimation 6s ease infinite;
+
+		@-webkit-keyframes BackgroundAnimation {
+				0%{ background-position:50% 20% }
+				50%{ background-position:50% 80% }
+				100%{ background-position:50% 20% }
+		}
+		@-moz-keyframes BackgroundAnimation {
+				0%{ background-position:50% 20% }
+				50%{ background-position:50% 80% }
+				100%{ background-position:50% 20% }
+		}
+		@keyframes BackgroundAnimation {
+				0%{ background-position:50% 20% }
+				50%{ background-position:50% 80% }
+				100%{ background-position:50% 20% }
+		}
 }
 
 h1, h2, h3, h4, h5 {
