@@ -21,7 +21,7 @@ exports = module.exports = function (req, res) {
 				keystone.list('PostCategory').model.find().sort('name').exec(function (err, results) {
 
 						if (err || !results.length) {
-							return next(err);
+								return next(err);
 						}
 
 						locals.data.categories = results;
