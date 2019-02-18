@@ -14,27 +14,25 @@
 var keystone = require('keystone');
 
 module.exports = {
+		/** New Message Notifications */
+		'message-notification': function (req, res, callback) {
+				// To test message notifications we create a dummy message that
+				// is not saved to the database, but passed to the template.
 
-	/** New Message Notifications */
-	'message-notification': function (req, res, callback) {
-		// To test message notifications we create a dummy message that
-		// is not saved to the database, but passed to the template.
+				var Message = keystone.list('Message');
 
-		var Message = keystone.list('Message');
+				var newMessage = new Message.model({
+						name: { first: 'Test', last: 'User' },
+						email: 'contact@portfolio-website.com',
+						phone: '+61 2 1234 5678',
+						messageType: 'message',
+						body: { md: 'Nice message notification.' }
+				});
 
-		var newMessage = new Message.model({
-			name: { first: 'Test', last: 'User' },
-			email: 'contact@portfolio-website.com',
-			phone: '+61 2 1234 5678',
-			messageType: 'message',
-			body: { md: 'Nice message notification.' },
-		});
-
-		callback(null, {
-			admin: 'Admin User',
-			message: newMessage,
-			message_url: '/keystone/messages/',
-		});
-	},
-
+				callback(null, {
+						admin: 'Admin User',
+						message: newMessage,
+						message_url: '/keystone/messages/'
+				});
+		}
 };

@@ -1,24 +1,24 @@
 <h1>Hi Craig</h1>
 <p class="text-larger">A new {{message.messageType}} was just submitted to {{brand}}:</p>
 {{#if message.email}}
-	<h3 class="text-larger">From
-	{{#if message.name.full}}
-		<strong>{{message.name.full}}</strong>
-	{{/if}}
+		<h3 class="text-larger">From
+		{{#if message.name.full}}
+				<strong>{{message.name.full}}</strong>
+		{{/if}}
 
-	{{#if message.email}}
-		(<a href="mailto:{{message.email}}">{{message.email}}</a>)
-	{{/if}}
-	</h3>
+		{{#if message.email}}
+				(<a href="mailto:{{message.email}}">{{message.email}}</a>)
+		{{/if}}
+		</h3>
 
-	{{#if message.phone}}
-		<h4 class="text-larger">Phone: {{message.phone}}</h4>
-	{{/if}}
+		{{#if message.phone}}
+				<h4 class="text-larger">Phone: {{message.phone}}</h4>
+		{{/if}}
 
-	{{#if message.body}}
-		{{{message.body.html}}}
-	{{/if}}
+		{{#if message.body}}
+				{{{message.body.html}}}
+		{{/if}}
 
-	<p class="text-muted">Sent {{message.createdAt}}</p>
-	<button url="/keystone/messages/{{message.id}}" label="Open Keystone" />
+		<p class="text-muted">Sent {{message.createdAt}}</p>
+		<button url="/keystone/messages/{{message.id}}" label="Open Keystone" />
 {{/if}}
